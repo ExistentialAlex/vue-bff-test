@@ -1,0 +1,24 @@
+{
+  "name": "vue-nestjs-test-types",
+  "version": "0.0.0",
+  "description": "Type definitions for vue-nestjs-test",
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "main": "./dist/vue-nestjs-test-types.umd.cjs",
+  "module": "./dist/vue-nestjs-test-types.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./dist/vue-nestjs-test-types.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

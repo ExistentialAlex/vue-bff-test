@@ -10,6 +10,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.2.2"
+    "lerna": "^8.2.2",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
