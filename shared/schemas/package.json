@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/vue-nestjs-test-schemas.umd.cjs",
   "module": "./dist/vue-nestjs-test-schemas.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build"
   },
