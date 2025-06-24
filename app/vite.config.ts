@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, mergeConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import ui from '@nuxt/ui/vite'
 import { BASIC_CONF } from '../vite.config'
 
 const PROXY_CONF = {
@@ -19,7 +20,7 @@ const BASIC_PROXY_OBJ = {
 export default mergeConfig(
   BASIC_CONF,
   defineConfig({
-    plugins: [vue(), vueDevTools()],
+    plugins: [vue(), vueDevTools(), ui()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
