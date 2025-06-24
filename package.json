@@ -8,7 +8,9 @@
     "lint": "lerna run lint",
     "format": "lerna run format"
   },
-  "dependencies": {},
+  "dependencies": {
+    "doublet": "^1.0.1"
+  },
   "devDependencies": {
     "prettier-plugin-tailwindcss": "^0.6.13",
     "lerna": "^8.2.2",

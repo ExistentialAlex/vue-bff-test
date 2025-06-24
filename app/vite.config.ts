@@ -10,14 +10,13 @@ import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import { BASIC_CONF } from '../vite.config';
 import path from 'path';
 
-const PROXY_CONF = {
-  target: 'http://localhost:3000',
-  secure: false,
-  changeOrigin: true,
-};
-
 const BASIC_PROXY_OBJ = {
-  '^/api/.*': PROXY_CONF,
+  '^/api/.*': {
+    target: 'http://localhost:3000',
+    secure: false,
+    changeOrigin: true,
+    rewrite: (path: string) => path.replace(/^\/api/, ''),
+  },
 };
 
 // https://vite.dev/config/
