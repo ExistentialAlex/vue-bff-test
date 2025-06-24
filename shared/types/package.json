@@ -8,6 +8,7 @@
   },
   "main": "./dist/vue-nestjs-test-types.umd.cjs",
   "module": "./dist/vue-nestjs-test-types.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./src/index.ts",
