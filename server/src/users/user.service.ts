@@ -1,6 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { paginate } from 'src/utils/pagination';
-import { CreateUserSchema, UserSchema } from 'vue-nestjs-test-schemas';
+import {
+  CreateUserSchema,
+  UpdateUserSchema,
+  UserSchema,
+} from 'vue-nestjs-test-schemas';
+import { ColumnSort, PaginationResult } from 'vue-nestjs-test-types';
 
 @Injectable()
 export class UserService {
@@ -37,8 +42,13 @@ export class UserService {
     return user;
   }
 
-  getUsers(page: number, limit: number = 25) {
-    return paginate(this.users, page, limit);
+  getUsers(
+    page: number,
+    limit: number,
+    search?: string,
+    sort?: ColumnSort[],
+  ): PaginationResult<UserSchema> {
+    return paginate(this.users, page, limit, search, sort);
   }
 
   createUser(user: CreateUserSchema): UserSchema {
@@ -48,5 +58,20 @@ export class UserService {
     };
     this.users.push(newUser);
     return newUser;
+  }
+
+  updateUser(id: number, user: UpdateUserSchema): UserSchema {
+    const existingUser = this.getUser(id);
+    const updatedUser = { ...existingUser, ...user };
+    this.users = this.users.map((u) => (u.id === id ? updatedUser : u));
+    return updatedUser;
+  }
+
+  deleteUser(id: number): void {
+    const userIndex = this.users.findIndex((user) => user.id === id);
+    if (userIndex === -1) {
+      throw new Error(`User with id ${id} not found`);
+    }
+    this.users.splice(userIndex, 1);
   }
 }

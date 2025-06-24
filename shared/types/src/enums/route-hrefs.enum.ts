@@ -5,7 +5,7 @@ export const RouteHrefs = {
   [Routes.dashboard]: '/dashboard',
   [Routes.home]: '/',
   [Routes.users]: '/users',
-  [Routes.user]: (id: number) => `/users/${id}`,
+  [Routes.user]: '/users/:id',
 } as const;
 
 export type RouteHrefs = (typeof RouteHrefs)[keyof typeof RouteHrefs];

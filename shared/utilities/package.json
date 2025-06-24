@@ -1,10 +1,10 @@
 {
-  "name": "vue-nestjs-test-schemas",
+  "name": "vue-nestjs-test-utilities",
   "version": "0.0.0",
-  "description": "Type definitions for vue-nestjs-test",
+  "description": "Utilities for vue-nestjs-test",
   "type": "module",
-  "main": "./dist/vue-nestjs-test-schemas.umd.cjs",
-  "module": "./dist/vue-nestjs-test-schemas.js",
+  "main": "./dist/vue-nestjs-test-utilities.umd.cjs",
+  "module": "./dist/vue-nestjs-test-utilities.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build"
@@ -12,11 +12,11 @@
   "exports": {
     ".": {
       "import": "./src/index.ts",
-      "require": "./dist/vue-nestjs-test-schemas.umd.cjs"
+      "require": "./dist/vue-nestjs-test-utilities.umd.cjs"
     }
   },
   "dependencies": {
-    "zod": "^3.25.67"
+    "vue-nestjs-test-types": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.8.3",

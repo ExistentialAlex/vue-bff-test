@@ -1,6 +1,22 @@
-export const paginate = <T>(dataset: T[], page: number, limit: number = 25) => {
+import type { ColumnSort, PaginationResult } from 'vue-nestjs-test-types';
+
+export const paginate = <T>(
+  dataset: T[],
+  page: number,
+  limit: number = 25,
+  search?: string,
+  sort?: ColumnSort[],
+): PaginationResult<T> => {
   const start = (page - 1) * limit;
   const end = page * limit;
+
+  if (search) {
+    console.log(`Searching for: '${search}'`);
+  }
+
+  if (sort && sort.length > 0) {
+    console.log(`Sorting by: ${JSON.stringify(sort)}`);
+  }
 
   return {
     results: dataset.slice(start, end), // The results for the current page.

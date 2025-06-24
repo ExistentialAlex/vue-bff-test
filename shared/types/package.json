@@ -12,8 +12,7 @@
   "exports": {
     ".": {
       "import": "./src/index.ts",
-      "require": "./dist/vue-nestjs-test-types.umd.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/vue-nestjs-test-types.umd.cjs"
     }
   },
   "dependencies": {},

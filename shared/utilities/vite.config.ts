@@ -9,7 +9,7 @@ export default mergeConfig(
     build: {
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
-        name: 'vue_nestjs_test_schemas',
+        name: 'vue_nestjs_test_utilities',
       },
       // Rollup conf
       rollupOptions: {

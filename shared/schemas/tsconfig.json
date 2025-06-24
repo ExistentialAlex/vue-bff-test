@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "isolatedModules": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

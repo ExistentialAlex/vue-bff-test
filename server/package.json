@@ -25,6 +25,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "vue-nestjs-test-types": "workspace:^",
     "vue-nestjs-test-schemas": "workspace:^",
+    "vue-nestjs-test-utilities": "workspace:^",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
