@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nitro build",
+    "dev": "nitro dev",
+    "prepare": "nitro prepare",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "vue-nestjs-test-schemas": "workspace:^"
+  },
+  "devDependencies": {
+    "nitropack": "latest",
+    "zod-openapi": "^4.2.4"
+  }
+}
