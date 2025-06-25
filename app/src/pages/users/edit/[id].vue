@@ -3,7 +3,7 @@ import doublet from 'doublet';
 import { FetchError, ofetch } from 'ofetch';
 import { onMounted, reactive } from 'vue';
 import { UpdateUserSchema, UserSchema } from 'vue-nestjs-test-schemas';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute, useRouter, type RouteLocationNormalizedLoaded } from 'vue-router';
 
 definePage({
   meta: {
@@ -16,7 +16,10 @@ definePage({
       {
         to: '',
         label: 'users.breadcrumbs.edit',
-        params: { id: (route) => route.params.id as string },
+        params: {
+          id: (route: RouteLocationNormalizedLoaded<'/users/edit/[id]'>) =>
+            route.params.id as string,
+        },
       },
     ],
   },
@@ -24,7 +27,7 @@ definePage({
 
 const toast = useToast();
 
-const route = useRoute();
+const route = useRoute('/users/edit/[id]');
 const router = useRouter();
 
 const model = reactive<UpdateUserSchema>({
