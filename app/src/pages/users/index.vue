@@ -6,6 +6,8 @@ import { h, resolveComponent, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { PaginatedTable } from '../../components';
 import { useApiPagination } from '@/composables';
+import doublet from 'doublet';
+import { FetchError, ofetch } from 'ofetch';
 
 const UButton = resolveComponent('UButton');
 const UDropdownMenu = resolveComponent('UDropdownMenu');
@@ -121,6 +123,34 @@ const getRowItems = (row: Row<UserSchema>) => {
       label: 'Edit',
       onSelect: () => router.push(`/users/edit/${row.original.id}`),
       icon: 'i-lucide-edit',
+    },
+    {
+      type: 'separator',
+    },
+    {
+      label: 'Delete',
+      onSelect: async () => {
+        const [err, res] = await doublet(ofetch<{ id: number }>, `/api/users/${row.original.id}`, {
+          method: 'DELETE',
+        });
+        if (err) {
+          toast.add({
+            title: 'Error deleting user',
+            description: (err as FetchError).data?.message || 'An unexpected error occurred.',
+            color: 'error',
+            icon: 'i-lucide-alert-triangle',
+          });
+          return;
+        }
+
+        toast.add({
+          title: 'User deleted successfully',
+          description: `User with ID ${res.id} has been deleted.`,
+          color: 'success',
+          icon: 'i-lucide-circle-check',
+        });
+      },
+      icon: 'i-lucide-trash',
     },
   ];
 };

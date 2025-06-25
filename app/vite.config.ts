@@ -15,7 +15,6 @@ const BASIC_PROXY_OBJ = {
     target: 'http://localhost:3000',
     secure: false,
     changeOrigin: true,
-    rewrite: (path: string) => path.replace(/^\/api/, ''),
   },
 };
 

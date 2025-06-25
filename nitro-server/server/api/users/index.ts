@@ -22,7 +22,7 @@ export default defineEventHandler((event) => {
     },
   ];
 
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 51; i++) {
     users.push({ id: i + 1, name: `User ${i}`, jobTitle: 'Developer' });
   }
 
