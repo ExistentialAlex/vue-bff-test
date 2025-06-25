@@ -33,13 +33,11 @@ export class UserService {
   }
 
   getUser(id: number): UserSchema {
-    const user = this.users.find((user: UserSchema) => user.id === id);
-
-    if (!user) {
-      throw new Error(`User with id ${id} not found`);
-    }
-
-    return user;
+    return {
+      id,
+      name: 'Alex Ashwood',
+      jobTitle: 'Developer',
+    };
   }
 
   getUsers(
