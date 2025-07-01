@@ -15,11 +15,7 @@ definePage({
       },
       {
         to: '',
-        label: 'users.breadcrumbs.edit',
-        params: {
-          id: (route: RouteLocationNormalizedLoaded<'/users/edit/[id]'>) =>
-            route.params.id as string,
-        },
+        label: 'users.breadcrumbs.create',
       },
     ],
   },

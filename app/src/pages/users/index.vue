@@ -149,13 +149,16 @@ const getRowItems = (row: Row<UserSchema>) => {
           color: 'success',
           icon: 'i-lucide-circle-check',
         });
+
+        // Refresh the user list
+        await refresh();
       },
       icon: 'i-lucide-trash',
     },
   ];
 };
 
-const { limit, page, limitItems, pagination, data, pending, search, sort, error } =
+const { limit, page, limitItems, pagination, data, pending, search, sort, error, refresh } =
   useApiPagination<UserSchema>('/api/users');
 
 watch([error], ([err]) => {

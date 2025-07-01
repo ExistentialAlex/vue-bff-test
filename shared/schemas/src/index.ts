@@ -1,3 +1,9 @@
-import { UserSchema, CreateUserSchema, UpdateUserSchema } from './user.schema';
+import {
+  UserSchema,
+  CreateUserSchema,
+  UpdateUserSchema,
+  GetUserSchema,
+  GetUsersSchema,
+} from './user.schema';
 
-export { UserSchema, CreateUserSchema, UpdateUserSchema };
+export { UserSchema, CreateUserSchema, UpdateUserSchema, GetUserSchema, GetUsersSchema };

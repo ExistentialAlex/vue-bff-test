@@ -15,3 +15,16 @@ export type CreateUserSchema = z.infer<typeof CreateUserSchema>;
 
 export const UpdateUserSchema = UserSchema.partial().omit({ id: true });
 export type UpdateUserSchema = z.infer<typeof UpdateUserSchema>;
+
+export const GetUsersSchema = z.object({
+  page: z.coerce.number(),
+  limit: z.coerce.number(),
+  search: z.string().optional(),
+  sort: z.string().optional(),
+});
+export type GetUsersSchema = z.infer<typeof GetUsersSchema>;
+
+export const GetUserSchema = z.object({
+  id: z.coerce.number(),
+});
+export type GetUserSchema = z.infer<typeof GetUserSchema>;

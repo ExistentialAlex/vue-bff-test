@@ -106,6 +106,19 @@ export const useApiPagination = <T>(request: string, opts?: FetchOptions<'json'>
     error.value = undefined;
   };
 
+  /**
+   * Set the page to 1 if necessary and reload the paginated data, retaining the current search, sort, and limit.
+   * If the page is already 1, it will execute the request immediately.
+   */
+  const refresh = async () => {
+    // If the page is already 1, we want to execute the request.
+    if (page.value === 1) {
+      return await execute();
+    }
+
+    page.value = 1;
+  };
+
   watch([sort, debouncedSearch, limit], ([sort, search, limit], [oldSort, oldSearch, oldLimit]) => {
     const limitChanged = !deepEqual(oldLimit, limit);
     const sortChanged = !deepEqual(oldSort, sort);
@@ -139,6 +152,6 @@ export const useApiPagination = <T>(request: string, opts?: FetchOptions<'json'>
     error,
     execute,
     pending,
-    refresh: execute,
+    refresh,
   };
 };
