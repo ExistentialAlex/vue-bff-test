@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "dev": "lerna run dev",
+    "dev:nest": "lerna run --scope vue-app --scope nestjs-server dev",
+    "dev:nitro": "lerna run --scope vue-app --scope nitro-server dev",
+    "dev:express": "lerna run --scope vue-app --scope express-server dev",
     "test": "lerna run test",
     "lint": "lerna run lint",
     "format": "lerna run format"

@@ -1,6 +1,6 @@
 packages:
   - 'app'
-  - 'server'
+  - 'nestjs-server'
   - 'nitro-server'
   - 'express-server'
   - 'shared/*'

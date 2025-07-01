@@ -1,6 +1,6 @@
 {
-  "name": "vue-nestjs-test-api",
-  "version": "0.0.1",
+  "name": "nestjs-server",
+  "version": "0.0.0",
   "description": "",
   "author": "",
   "private": true,

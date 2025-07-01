@@ -1,4 +1,6 @@
 {
+  "name": "nitro-server",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "nitro build",
