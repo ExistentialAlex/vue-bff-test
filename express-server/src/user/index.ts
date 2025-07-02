@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { type Router } from 'express';
 import validate from 'express-zod-safe';
 import { convertQueryStringToSort } from 'vue-nestjs-test-utilities';
 import { createUser, deleteUser, getUser, getUsers, updateUser } from './user.service';
@@ -10,7 +10,7 @@ import {
 } from 'vue-nestjs-test-schemas';
 import doublet from 'doublet';
 
-const router = express.Router();
+const router: Router = express.Router();
 
 router.get('/', validate({ query: GetUsersSchema }), (req, res) => {
   const { page, limit, search, sort } = req.query;
