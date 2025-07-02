@@ -9,8 +9,7 @@ import router from './router';
 
 import { createI18n } from 'vue-i18n';
 import messages from '@intlify/unplugin-vue-i18n/messages';
-
-console.log(messages);
+import type { Router } from 'vue-router';
 
 const i18n = createI18n({
   locale: 'en',
@@ -20,7 +19,7 @@ const i18n = createI18n({
 const app = createApp(App);
 
 app.use(createPinia());
-app.use(router);
+app.use(router as Router);
 app.use(ui);
 app.use(i18n);
 

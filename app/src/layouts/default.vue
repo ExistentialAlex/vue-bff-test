@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useSidebar, useUserSession } from '@/composables';
-import type { IAppBreadcrumb } from 'vue-nestjs-test-types';
 import AppNavbar from '@/components/app-navbar.vue';
 
 const { loggedIn, user } = useUserSession();
@@ -35,7 +34,7 @@ const { sidebarModel, sidebarItems } = useSidebar();
       <AppNavbar
         v-if="loggedIn"
         v-model:sidebar="sidebarModel"
-        :breadcrumbs="$route.meta.breadcrumbs as IAppBreadcrumb[]"
+        :breadcrumbs="$route.meta.breadcrumbs"
       />
       <router-view></router-view>
     </main>

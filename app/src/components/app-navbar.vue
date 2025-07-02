@@ -3,13 +3,13 @@ import { useUserSession } from '@/composables';
 import type { BreadcrumbItem } from '@nuxt/ui';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import type { IAppBreadcrumb } from 'vue-nestjs-test-types';
-import { useRoute, useRouter } from 'vue-router';
+import type { AppBreadcrumb } from '../types';
+import { useRoute, useRouter, type RouteMap } from 'vue-router';
 import { useColorMode } from '@vueuse/core';
 
 export interface IAppNavbarProps {
   sidebar: boolean;
-  breadcrumbs?: IAppBreadcrumb[];
+  breadcrumbs?: AppBreadcrumb<keyof RouteMap>[];
 }
 
 export interface IAppNavbarEmits {
