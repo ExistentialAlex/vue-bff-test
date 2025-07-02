@@ -13,6 +13,7 @@
     "express-zod-safe": "^1.5.3",
     "vue-nestjs-test-utilities": "workspace:^",
     "vue-nestjs-test-schemas": "workspace:^",
+    "vue-nestjs-test-types": "workspace:^",
     "zod": "^3.25.67"
   },
   "devDependencies": {
