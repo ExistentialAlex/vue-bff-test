@@ -16,14 +16,16 @@ definePage({
       {
         to: '',
         label: 'users.breadcrumbs.view',
-        params: { id: (route: RouteLocationNormalized) => route.params.id as string },
+        params: {
+          id: (route: RouteLocationNormalized<'/users/[id]'>) => route.params.id as string,
+        },
       },
     ],
   },
 });
 
 const toast = useToast();
-const route = useRoute();
+const route = useRoute('/users/[id]');
 const data = ref<UserSchema | undefined>(undefined);
 
 onMounted(async () => {

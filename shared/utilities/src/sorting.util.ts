@@ -1,4 +1,4 @@
-import { ColumnSort } from 'vue-nestjs-test-types';
+import type { ColumnSort } from 'vue-nestjs-test-types';
 
 /**
  * Utility functions for converting sorting parameters between different formats.
